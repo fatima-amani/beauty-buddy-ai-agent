@@ -4,7 +4,7 @@ import json
 import html
 
 
-def get_recommendation(query):
+def get_products_from_web(query):
     query = "%20".join(query.split())  # Format the query for the URL
     url = f"https://www.tirabeauty.com/products/?q={query}"
     print("Fetching URL:", url)
@@ -90,5 +90,5 @@ def get_recommendation(query):
 
 
 # Example usage
-result = get_recommendation("foundation")
-print(result)
+# result = get_recommendation("foundation")
+# print(result)

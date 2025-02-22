@@ -21,6 +21,7 @@ Context:
 {context}
 """
 
+
 def generate_response(query):
     """Retrieve relevant content and generate a response."""
     # Retrieve top-k relevant documents
