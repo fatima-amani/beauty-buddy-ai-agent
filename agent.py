@@ -108,6 +108,6 @@ workflow.set_finish_point("agent")
 app = workflow.compile()
 
 # Run the agent
-query = "How to cook rice"
-response = app.invoke({"input": query})
-print(response["output"])
+# query = "How to cook rice"
+# response = app.invoke({"input": query})
+# print(response["output"])
