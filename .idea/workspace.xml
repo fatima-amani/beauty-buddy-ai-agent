@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f7b404e-9174-47cd-84c5-9d19325a356f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/AIMajorAssignment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AIMajorAssignment.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/injest.py" beforeDir="false" afterPath="$PROJECT_DIR$/injest.py" afterDir="false" />
     </list>
@@ -38,7 +36,8 @@
   "keyToString": {
     "Python.injest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+    "git-widget-placeholder": "feature/dev",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="SharedIndexes">

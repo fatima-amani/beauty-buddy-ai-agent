@@ -40,4 +40,4 @@ faiss.write_index(index, "faiss_index.idx")
 with open("doc_store.pkl", "wb") as f:
     pickle.dump(documents, f)
 
-print("✅ FAISS index and document store created!")
+print("FAISS index and document store created!")
