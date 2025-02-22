@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f7b404e-9174-47cd-84c5-9d19325a356f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/llm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc_store.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/doc_store.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/faiss_index.idx" beforeDir="false" afterPath="$PROJECT_DIR$/faiss_index.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/injest.py" beforeDir="false" afterPath="$PROJECT_DIR$/injest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/retriever.py" beforeDir="false" afterPath="$PROJECT_DIR$/retriever.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/llm2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +35,7 @@
   "keyToString": {
     "Python.injest.executor": "Run",
     "Python.llm.executor": "Run",
+    "Python.llm2.executor": "Run",
     "Python.retriever.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature/dev",

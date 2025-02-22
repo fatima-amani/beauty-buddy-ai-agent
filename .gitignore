@@ -1,0 +1,5 @@
+# created by virtualenv automatically
+venv/Lib
+doc_store.pkl
+faiss_index.idx
+.env
