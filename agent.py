@@ -19,6 +19,7 @@ client = InferenceClient(
     api_key=os.getenv("TOGETHER_ACCESS_TOKEN")
 )
 
+
 # Define the tools
 @tool
 def retrieve_from_knowledge_base(query: str) -> str:
@@ -26,12 +27,15 @@ def retrieve_from_knowledge_base(query: str) -> str:
     results = retrieve_top_k(query)
     return "\n".join(results) if results else "No relevant information found in the knowledge base."
 
+
 @tool
 def get_beauty_product_recommendations(query: str) -> str:
     """Get beauty product recommendations by scraping the web."""
     return get_products_from_web(query)
 
+
 tools = [retrieve_from_knowledge_base, get_beauty_product_recommendations]
+
 
 # Define the LLM using Together API
 class TogetherLLM(Runnable):
@@ -49,6 +53,7 @@ class TogetherLLM(Runnable):
         )
         return completion.choices[0].message.content
 
+
 # Initialize the Together LLM
 together_llm = TogetherLLM(client)
 
@@ -63,6 +68,7 @@ BEAUTY_KEYWORDS = [
 RECOMMENDATION_KEYWORDS = [
     "recommend", "suggest", "best", "top", "good", "product", "buy", "purchase"
 ]
+
 
 # Define the agent logic
 def agent(state: Dict[str, Any]) -> Dict[str, Any]:
@@ -84,6 +90,7 @@ def agent(state: Dict[str, Any]) -> Dict[str, Any]:
     # Update the state with the result
     state["output"] = result
     return state
+
 
 # Define the graph
 workflow = Graph()
