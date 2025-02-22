@@ -19,4 +19,17 @@ def retrieve_top_k(query, k=3):
     results = [documents[i] for i in indices[0]]
     return results
 
-print(retrieve_top_k("foundatiion"))
+
+# print(retrieve_top_k("foundation"))
+
+
+def generate_response(query):
+    """Retrieve relevant content and generate response."""
+    retrieved_docs = retrieve_top_k(query)
+    context = "\n".join(retrieved_docs)
+
+    # Send to Mistral LLM
+    prompt = f"Here are some beauty tips:\n{context}\n\nUser Query: {query}\nAnswer: "
+    response = mistral.generate(prompt=prompt, model="mistral")
+
+    return response["choices"][0]["text"]
