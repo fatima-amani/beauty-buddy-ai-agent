@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f7b404e-9174-47cd-84c5-9d19325a356f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/llm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc_store.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/doc_store.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/faiss_index.idx" beforeDir="false" afterPath="$PROJECT_DIR$/faiss_index.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/injest.py" beforeDir="false" afterPath="$PROJECT_DIR$/injest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/retriever.py" beforeDir="false" afterPath="$PROJECT_DIR$/retriever.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,14 +35,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.agent.executor": "Run",
+    "Python.app.executor": "Run",
     "Python.injest.executor": "Run",
     "Python.llm.executor": "Run",
+    "Python.llm2.executor": "Run",
     "Python.retriever.executor": "Run",
+    "Python.scraper.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature/dev",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Fatima\OneDrive\Desktop\Webknot Assignment\AI Track\AIMajorAssignment" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -63,5 +69,8 @@
       <updated>1740207726116</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
 </project>

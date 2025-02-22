@@ -1,6 +1,7 @@
 import faiss
 import pickle
 import numpy as np
+from langchain_core.prompt_values import ChatPromptValue
 from sentence_transformers import SentenceTransformer
 
 # Load embedding model
@@ -14,6 +15,8 @@ with open("doc_store.pkl", "rb") as f:
 
 def retrieve_top_k(query, k=3):
     """Retrieve top-k relevant documents based on query."""
+    if isinstance(query, ChatPromptValue):
+        query = query.to_string()  # Convert ChatPromptValue to string
     query_embedding = embedder.encode([query])
     distances, indices = index.search(query_embedding, k)
     results = [documents[i] for i in indices[0]]
@@ -21,15 +24,3 @@ def retrieve_top_k(query, k=3):
 
 
 # print(retrieve_top_k("foundation"))
-
-
-def generate_response(query):
-    """Retrieve relevant content and generate response."""
-    retrieved_docs = retrieve_top_k(query)
-    context = "\n".join(retrieved_docs)
-
-    # Send to Mistral LLM
-    prompt = f"Here are some beauty tips:\n{context}\n\nUser Query: {query}\nAnswer: "
-    response = mistral.generate(prompt=prompt, model="mistral")
-
-    return response["choices"][0]["text"]
