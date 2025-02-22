@@ -1,10 +1,14 @@
 from huggingface_hub import InferenceClient
-from retriever import retrieve_top_k  # Ensure this function is defined elsewhere
+from retriever import retrieve_top_k
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Initialize the Together API client
 client = InferenceClient(
     provider="together",
-    api_key=""
+    api_key=os.getenv("TOGETHER_ACCESS_TOKEN")
 )
 
 # Define the system prompt template
@@ -36,7 +40,7 @@ def generate_response(query):
     completion = client.chat.completions.create(
         model="deepseek-ai/DeepSeek-R1",  # Replace with your desired model
         messages=messages,
-        max_tokens=500,  # Adjust as needed
+        max_tokens=200,  # Adjust as needed
     )
 
     # Extract and print the response
@@ -45,4 +49,4 @@ def generate_response(query):
     return response
 
 # Example usage
-generate_response("tell me about formula 1 car race")
+# generate_response("how to cook rice")
