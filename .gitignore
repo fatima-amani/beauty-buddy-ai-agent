@@ -1,5 +1,19 @@
-# created by virtualenv automatically
-venv/Lib
+# Ignore the virtual environment
+venv/
+
+# Ignore environment variable files
+.env
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore dataset and model index files
 doc_store.pkl
 faiss_index.idx
-.env
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
