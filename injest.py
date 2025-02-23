@@ -10,7 +10,9 @@ from sentence_transformers import SentenceTransformer
 embedder = SentenceTransformer("all-MiniLM-L6-v2")
 
 # List of PDF file paths
-pdf_paths = ["C:/Users/Fatima/Downloads/makeup_tutorial.pdf"]  # Add your PDF paths here
+pdf_paths = ["C:/Users/Fatima/Downloads/makeup_tutorial.pdf",
+             "C:/Users/Fatima/Downloads/essence_of_makeup.pdf"]  # Add your PDF paths here
+
 
 # Extract text from PDFs using fitz
 def extract_text_from_pdf(pdf_path):
@@ -19,6 +21,7 @@ def extract_text_from_pdf(pdf_path):
     for page in doc:
         text += page.get_text()
     return text
+
 
 # Load beauty tips from PDFs
 documents = []
@@ -41,4 +44,3 @@ with open("doc_store.pkl", "wb") as f:
     pickle.dump(documents, f)
 
 # print("FAISS index and document store created!")
-

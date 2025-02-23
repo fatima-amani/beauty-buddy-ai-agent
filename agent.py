@@ -48,8 +48,7 @@ class TogetherLLM(Runnable):
         ]
         completion = self.client.chat.completions.create(
             model="deepseek-ai/DeepSeek-R1",  # Replace with your desired model
-            messages=messages,
-            max_tokens=500,
+            messages=messages
         )
         return completion.choices[0].message.content
 
@@ -75,17 +74,38 @@ def agent(state: Dict[str, Any]) -> Dict[str, Any]:
     # Get the user input
     user_input = state.get("input", "").lower()
 
+    # Initialize the result variable
+    result = ""
+
     # Check if the query is related to product recommendations
     if any(keyword in user_input for keyword in RECOMMENDATION_KEYWORDS):
         # Use the product recommendation tool
-        result = get_beauty_product_recommendations(user_input)
+        tool_output = get_beauty_product_recommendations(user_input)
+        # Pass the tool output to the LLM for refinement
+        result = together_llm.invoke({
+            "input": f"The user asked: '{user_input}'. Here are the product recommendations: {tool_output}. Generate "
+                     f"a concise and helpful response in 100 words.Do NOT include any reasoning, thoughts, "
+                     f"or step-by-step analysis—only return the final response."
+        })
     # Check if the query is related to beauty or makeup
-    elif any(keyword in user_input for keyword in BEAUTY_KEYWORDS):
-        # Use the knowledge base tool
-        result = retrieve_from_knowledge_base(user_input)
     else:
-        # If the query is out of context, return a message
-        result = "This query is out of my context. I can only assist with beauty and makeup-related queries or product recommendations."
+        # Use the knowledge base tool
+        tool_output = retrieve_from_knowledge_base(user_input)
+        # Pass the tool output to the LLM for refinement
+        result = together_llm.invoke({
+            "input": f"The user asked: '{user_input}'. Below is the relevant information from the knowledge base:\n\n"
+                     f"{tool_output}\n\n"
+                     f"Based on this information, provide a direct, concise, and helpful response within 100 words. "
+                     f"Do NOT include any reasoning, thoughts, or step-by-step analysis—only return the final response."
+                     f"If the knowledge base lacks relevant information, clearly state that you do not have the "
+                     f"necessary details and do not attempt to answer the query."
+        })
+
+    # else:
+    #     # If the query is out of context, pass it to the LLM for a polite response
+    #     result = together_llm.invoke({
+    #         "input": f"The user asked: '{user_input}'. This query is out of my context. I can only assist with beauty and makeup-related queries or product recommendations. Generate a polite and concise response in under 200 tokens."
+    #     })
 
     # Update the state with the result
     state["output"] = result
