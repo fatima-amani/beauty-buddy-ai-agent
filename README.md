@@ -19,9 +19,10 @@ This project is an AI-powered chatbot built using **FastAPI** as the backend and
 │── agent.py        # AI agent using LangChain
 │── app.py         # FastAPI backend for chatbot
 │── chatbot_ui.py  # Streamlit frontend for user interaction
+│── injest.py   # FAISS-based PDF text embedding and indexing
 │── llm.py         # LLM model (on local machine) integration
 │── llm2.py         # LLM model (via together API) integration
-│── retriever.py   # Retrieves relevant information
+│── retriever.py   # FAISS-based document retrieval using embeddings
 │── scraper.py     # Scrapes beauty products and links
 │── .gitignore     # Git ignore file
 │── README.md      # Project documentation
