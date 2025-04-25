@@ -1,4 +1,4 @@
-# AI Chatbot
+# BeautyBuddy: AI Agent for Personalized Beauty & Makeup
 
 ## 📌 Overview
 
